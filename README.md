@@ -1,47 +1,54 @@
-### react-native-enhanced-toast
+# react-native-enhanced-toast
 
------------------------
 
- # NOTICE:
+ ## NOTICE:
 
-    - react-native-root-toast >= 2.1.0 only supports react-native >= 0.47.0 , for react-native < 0.47.0 you can choose 2.0.0 or below.
+> react-native-root-toast >= 2.1.0 only supports react-native >= 0.47.0
 
-#### Features
+> for react-native < 0.47.0 you can choose 2.0.0 or below.
+
+## Features
 1. Pure javascript solution.
 2. Support both Android and iOS.
 3. Lots of custom options for Toast.
-4. You can show/hide Toast by calling api or using Component inside render.
+4. You can show/hide Toast by **calling api** or using **Component** inside render.
 
 ![screen-shoots](./Example/screen-shoots.gif)
-
-### Install
-
-`npm install react-native-root-toast`
+![screen-shoots](./Example/screen-shoots2.gif)
 
 
-### Settings
+## Install
+
+`yarn add react-native-root-toast`
+
+
+## Settings
 
 Name                | Default                  |  Type    | Description
 --------------------|--------------------------|----------|---------------------------
-duration            | Toast.durations.SHORT    | Number   | The duration of the toast. (Only for api calling method)
-visible             | false                    | Bool     | The visibility of toast. (Only for Toast Component)
+duration            | Toast.durations.SHORT    | Number   | The duration of the toast. `0` will not disappear (Only for **api calling** method)
+delay               | 0                        | Number   | The delay duration before toast start appearing on screen.
+visible             | false                    | Bool     | The visibility of toast. (Only for Toast **Component**)
 position            | Toast.positions.BOTTOM   | Number   | The position of toast showing on screen (A negative number represents the distance from the bottom of screen. A positive number represents the distance form the top of screen. `0` will position the toast to the middle of screen.)
 animation           | true                     | Bool     | Should preform an animation on toast appearing or disappearing.
+containerStyle      | { flexDirection: 'row', alignItems: 'center', padding: 10, backgroundColor: '#000', opacity: 0.8, borderRadius: 5 }  | ViewPropTypes.style | The toast container style
+textStyle           | { fontSize: 16, color: '#fff', textAlign: 'center' }  | Text.propTypes.style  | The message text style.
+textColor           | null                     | String   | The text color of the toast.
 shadow              | true                     | Bool     | Should drop shadow around Toast element.
 backgroundColor     | null                     | String   | The background color of the toast.
 shadowColor         | null                     | String   | The shadow color of the toast.
-textColor           | null                     | String   | The text color of the toast.
-delay               | 0                        | Number   | The delay duration before toast start appearing on screen.
-hideOnPress         | true                     | Bool     | Should hide toast that appears by pressing on the toast.
+showCloseButton     | false                    | Bool     | Should show close icon right after the message.
+hideOnPress         | true                     | Bool     | Should hide toast that appears by pressing on the toast. `onPressMessage` property first.
+onPressMessage      | null                     | Function | Callback for press message.
 onShow              | null                     | Function | Callback for toast\`s appear animation start
 onShown             | null                     | Function | Callback for toast\`s appear animation end
 onHide              | null                     | Function | Callback for toast\`s hide animation start
 onHidden            | null                     | Function | Callback for toast\`s hide animation end
 
 
-### Properties
+## Properties
 
-##### Toast.durations
+### Toast.durations
 
 presets of duration of the toast.
 
@@ -49,7 +56,7 @@ presets of duration of the toast.
 
 2. Toast.durations.LONG (equals to *3500*)
 
-##### Toast.positions
+### Toast.positions
 
 presets of position of toast.
 
@@ -59,11 +66,11 @@ presets of position of toast.
 
 3. Toast.positions.CENTER (equals to *0*)
 
-### Usage
+## Usage
 
 There are two different ways to manage a Toast.
 
-##### **Calling api**
+### **Calling api**
 
 ```
 import Toast from 'react-native-root-toast';
@@ -98,7 +105,7 @@ setTimeout(function () {
 
 ```
 
-##### **Using a Component**
+### **Using a Component**
 
 **NOTE:**
 Showing a toast by using a Component inside render, The toast will be automatically disappeared when the `<Toast />` is unmounted.
@@ -142,5 +149,5 @@ class Example extends Component{
 
 ```
 cd ./Example
-npm install
+yarn
 ```

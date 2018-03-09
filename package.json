@@ -1,7 +1,7 @@
 {
-  "version": "3.1.1",
+  "version": "3.1.2",
   "name": "react-native-enhanced-toast",
-  "description": "react native toast like component, pure javascript solution",
+  "description": "react native `enhanced` toast like component, pure javascript solution",
   "private": false,
   "repository": {
     "type": "git",
@@ -9,7 +9,7 @@
   },
   "license": "MIT",
   "main": "./index.js",
-  "keywords": ["react-component", "react-native", "ios", "android", "image", "video", "focus"],
+  "keywords": ["react-component", "react-native", "ios", "android", "toast"],
   "dependencies": {
     "react-native-root-siblings": "^3.0.0",
     "prop-types": "^15.5.10"
